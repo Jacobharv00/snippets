@@ -3,7 +3,7 @@ import { redirect } from "next/navigation";
 import { db } from "@/db";
 
 export default function SnippetCreatePage() {
-    async function createSnippet(formData: FormData) {
+    const createSnippet = async (formData: FormData) => {
         // Mark as server action
         "use server";
 
@@ -19,11 +19,9 @@ export default function SnippetCreatePage() {
             },
         });
 
-        console.log("snippet -->", snippet);
-
         // Take user back to home page
         redirect("/");
-    }
+    };
 
     return (
         <form action={createSnippet}>
