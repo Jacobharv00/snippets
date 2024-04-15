@@ -18,11 +18,7 @@ export default function SnippetEditForm({ snippet }: ISnippetEditForm) {
         setCode(value);
     };
 
-    const editSnippetAction = actions.editSnippet.bind(
-        null,
-        snippet.id,
-        snippet.code
-    );
+    const editSnippetAction = actions.editSnippet.bind(null, snippet.id, code);
 
     return (
         <div>
